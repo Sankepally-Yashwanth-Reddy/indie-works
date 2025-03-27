@@ -1,0 +1,174 @@
+/* ========== Post Job Section ========== */
+.iw-post-job-section {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Container */
+.iw-post-job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ========== Input Groups ========== */
+.iw-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.iw-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ========== Input Fields ========== */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+/* Required Field Highlight */
+.iw-input-required {
+    border-left: 2px solid red;
+    padding-left: 8px;
+}
+
+/* Focus Effect */
+.iw-input-required:focus {
+    border-left: 2px solid #ff5722;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* ========== Budget & Currency ========== */
+.iw-input-sub-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Budget Input Container */
+.iw-budget-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: white;
+    width: 100%;
+}
+
+/* Currency Symbol */
+.iw-currency-symbol {
+    padding: 10px;
+    background: #f5f5f5;
+    border-right: 1px solid #ccc;
+    font-size: 16px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+
+/* Budget Input */
+.iw-budget-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 0px;
+}
+
+/* Currency Dropdown */
+.iw-currency-type-select {
+    padding: 13px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: white;
+    cursor: pointer;
+    width: 100px;
+}
+
+/* ========== Chip List (Material UI Styling) ========== */
+.iw-chip-container {
+    margin-bottom: 15px;
+}
+
+mat-chip-row {
+    background-color: #f0f0f0;
+    color: #333;
+    margin-right: 4px;
+    border-radius: 16px;
+    padding: 4px 10px;
+}
+
+mat-chip-row button {
+    margin-left: 8px;
+    color: #555;
+}
+
+mat-chip-row:hover {
+    background-color: #e0e0e0;
+}
+
+/* ========== Attachments ========== */
+#attachments {
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ========== Submit Button ========== */
+.btn-primary {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    .iw-post-job-section {
+        padding: 15px;
+    }
+
+    .iw-input-sub-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iw-currency-type-select {
+        width: 100%;
+    }
+}

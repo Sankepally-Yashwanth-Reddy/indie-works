@@ -1,0 +1,118 @@
+<nav class="iw-navbar" aria-label="Main Navigation">
+    <!-- Left Section (Logo) -->
+    <a href="home" class="iw-navbar-left">
+        <img src="logo.svg" alt="IndieWorks Logo" class="iw-logo" />
+    </a>
+
+    <!-- Center Section (Search Bar) -->
+    <div class="iw-navbar-center">
+        <div class="iw-search" role="search">
+            <span class="material-icons" aria-hidden="true">search</span>
+            <input type="text" placeholder="Search..." aria-label="Search IndieWorks" />
+        </div>
+    </div>
+
+    <!-- Right Section (Buttons & Profile) -->
+    <div class="iw-navbar-right">
+        <button class="iw-nav-btn" aria-label="Post a Job" type="button" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            <span class="material-icons">add_circle_outline</span>
+            <span>Post a Job</span>
+        </button>
+
+        <button class="iw-icon-btn" aria-label="View Notifications" [ngbPopover]="popContent" [popoverTitle]="popTitle"
+            placement="bottom">
+            <span class="material-icons" aria-hidden="true">notifications</span>
+        </button>
+
+        <ng-template #popTitle>
+            Notifications
+        </ng-template>
+        <ng-template #popContent>
+            <div class="iw-notification-list-container">
+                <ul class="iw-notification-list">
+                    <li class="iw-notification-item">
+                        Job Posted
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+
+        <button class="iw-icon-btn" aria-label="Open Messages">
+            <span class="material-icons" aria-hidden="true">chat</span>
+        </button>
+
+        <!-- Profile Dropdown (Bootstrap) -->
+        <div class="dropdown">
+            <button class="iw-profile-btn iw-icon-btn" id="profileDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false" aria-label="Profile">
+                <span class="material-icons" aria-hidden="true">account_circle</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item iw-dd-menu-item d-flex gap-1" href="#">
+                        <span class="material-icons" aria-hidden="true">person</span>
+                        <span class="iw-dd-item">
+                            Profile
+                        </span>
+                    </a></li>
+                <li><a class="dropdown-item iw-dd-menu-item d-flex gap-1" href="#">
+                        <span class="material-icons" aria-hidden="true">settings</span>
+                        Settings
+                    </a></li>
+                <li><a class="dropdown-item iw-dd-menu-item d-flex gap-1" href="#">
+                        <span class="material-icons" aria-hidden="true">help</span>
+                        Help
+                    </a></li>
+                <li><a class="dropdown-item iw-dd-menu-item d-flex gap-1" href="#">
+                        <span class="material-icons" aria-hidden="true">logout</span>
+                        Logout
+                    </a></li>
+            </ul>
+        </div>
+
+        <!-- Theme Toggle -->
+        <!-- Theme Toggle -->
+        <div class="iw-theme-toggle" role="radiogroup" aria-label="Theme Selection">
+            <input type="radio" id="light" name="theme" class="btn-check" (change)="setTheme('light')"
+                [checked]="theme === 'light'" />
+            <label for="light" class="btn btn-outline-secondary" aria-label="Light Theme">
+                <span class="material-icons">light_mode</span>
+            </label>
+
+            <input type="radio" id="system" name="theme" class="btn-check" (change)="setTheme('system')"
+                [checked]="theme === 'system'" />
+            <label for="system" class="btn btn-outline-secondary" aria-label="System Default Theme">
+                <span class="material-icons">settings</span>
+            </label>
+
+            <input type="radio" id="dark" name="theme" class="btn-check" (change)="setTheme('dark')"
+                [checked]="theme === 'dark'" />
+            <label for="dark" class="btn btn-outline-secondary" aria-label="Dark Theme">
+                <span class="material-icons">dark_mode</span>
+            </label>
+        </div>
+
+    </div>
+</nav>
+
+<section class="iw-modal-section">
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <app-post-job></app-post-job>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Draft</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

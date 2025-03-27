@@ -1,0 +1,19 @@
+<svg width="250" height="80" viewBox="0 0 250 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rocket Body -->
+  <path d="M30 50 Q40 10 50 50 L40 45 Z" fill="#4CAF50" stroke="#333" stroke-width="2"/>
+  
+  <!-- Rocket Window -->
+  <circle cx="40" cy="30" r="5" fill="#FF9800" stroke="#333" stroke-width="1"/>
+  
+  <!-- Rocket Fins -->
+  <polygon points="30,50 20,60 35,55" fill="#FF5722"/>
+  <polygon points="50,50 60,60 45,55" fill="#FF5722"/>
+
+  <!-- Rocket Flames -->
+  <path d="M35,50 Q40,70 45,50" fill="#FFD700"/>
+  
+  <!-- Brand Name -->
+  <text x="70" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#333">
+    Indie<tspan fill="#FF9800">Works</tspan>
+  </text>
+</svg>

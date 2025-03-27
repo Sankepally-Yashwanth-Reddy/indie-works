@@ -1,0 +1,16 @@
+<nav class="iw-sidebar" [class.iw-collapsed]="isSidebarOpen" aria-label="Main Navigation">
+    <button class="iw-toggle-btn d-flex" (click)="toggleSidebar()" aria-label="Toggle Sidebar">
+        <!-- <span>Menu</span> -->
+        <span class="material-icons">menu</span>
+    </button>
+
+    <ul class="iw-menu">
+        <li *ngFor="let item of menuItems; index as i">
+            <a href="javascript:void(0)" (click)="onNavigate(item.route)" attr.aria-label="{{ item.label }}"
+                class="iw-sidebar-nav-link">
+                <span class="material-icons">{{ item.icon }}</span>
+                <span *ngIf="!isSidebarOpen">{{ item.label }}</span>
+            </a>
+        </li>
+    </ul>
+</nav>

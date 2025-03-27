@@ -1,0 +1,120 @@
+.iw-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    /* Light gray, opposite to logo */
+    border-bottom: 2px solid #ddd;
+}
+
+.iw-navbar-left .iw-logo {
+    height: 50px;
+}
+
+.iw-navbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.iw-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #bbb;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 280px;
+    background: white;
+}
+
+.iw-search input {
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    width: 100%;
+    background: none;
+}
+
+.iw-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Buttons */
+.iw-nav-btn {
+    display: flex;
+    align-items: center;
+    background: #4caf50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.iw-nav-btn .material-icons {
+    margin-right: 5px;
+}
+
+.iw-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.iw-icon-btn:hover {
+    color: #4caf50;
+}
+
+/* Profile Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.iw-dd-menu-item:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.iw-profile-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+/* Theme Toggle */
+.iw-theme-toggle {
+    display: flex;
+    gap: 5px;
+}
+
+.iw-theme-toggle label {
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .iw-navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .iw-navbar-center {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .iw-navbar-right {
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .iw-theme-toggle {
+        justify-content: center;
+    }
+}

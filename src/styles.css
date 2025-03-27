@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/styles/dark-theme.css';
+/* @import "@coreui/chartjs/scss/coreui-chartjs"; */
+
+html,
+body {
+    height: 100%;
+}
+
+
+button:focus-visible {
+    outline: 2px solid #000 !important;
+    box-shadow: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

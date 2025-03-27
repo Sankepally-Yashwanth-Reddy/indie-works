@@ -1,0 +1,90 @@
+<section class="iw-post-job-section">
+    <form [formGroup]="jobForm" (ngSubmit)="onPostJobSubmit()" class="iw-post-job-form">
+
+        <!-- Job Title -->
+        <div class="iw-input-group">
+            <label for="jobTitle" class="iw-label">Job Title</label>
+            <input type="text" id="jobTitle" class="form-control iw-input-field iw-input-required"
+                formControlName="jobTitle" placeholder="Enter job title" />
+            <div class="error" *ngIf="jobForm.controls['jobTitle'].invalid && jobForm.controls['jobTitle'].touched">
+                Title is required (min 5 characters).
+            </div>
+        </div>
+
+        <!-- Job Categories -->
+        <div class="iw-chip-container">
+            <mat-form-field class="iw-chip-list">
+                <mat-label>Job Categories</mat-label>
+                <mat-chip-grid #chipGrid>
+                    <mat-chip-row *ngFor="let category of categories()" (removed)="removeCategory(category)">
+                        {{ category }}
+                        <button matChipRemove>
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                </mat-chip-grid>
+                <input placeholder="Add a category..." #categoryInput [matChipInputFor]="chipGrid"
+                    (matChipInputTokenEnd)="addCategory($event)" />
+                <mat-autocomplete (optionSelected)="selectedCategory($event)">
+                    <mat-option *ngFor="let category of allCategories" [value]="category">
+                        {{ category }}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+        <!-- Budget -->
+        <div class="iw-input-group">
+            <label for="budget" class="iw-label">Budget</label>
+            <div class="iw-input-sub-group">
+                <!-- Budget Input -->
+                <div class="iw-budget-container">
+                    <span class="iw-currency-symbol">{{ selectedCurrencySymbol }}</span>
+                    <input type="number" id="budget"
+                        class="form-control iw-input-field iw-input-required iw-budget-input" formControlName="budget"
+                        placeholder="Enter budget" />
+                </div>
+
+                <!-- Currency Type Dropdown -->
+                <select name="currencyType" id="currencyType" class="iw-currency-type-select"
+                    formControlName="currencyType" (change)="onCurrencyChange($event)">
+                    <option *ngFor="let currency of currencyOptions" [value]="currency.value">
+                        {{ currency.symbol }} {{ currency.value }}
+                    </option>
+                </select>
+            </div>
+
+            <!-- Validation Error -->
+            <div class="error" *ngIf="jobForm.controls['budget'].invalid && jobForm.controls['budget'].touched">
+                Budget must be a positive number.
+            </div>
+        </div>
+
+        <!-- Deadline -->
+        <div class="iw-input-group">
+            <label for="deadline" class="iw-label iw-input-field">Deadline (Optional)</label>
+            <input type="date" id="deadline" class="form-control" formControlName="deadline" />
+        </div>
+
+        <!-- Job Description -->
+        <div class="iw-input-group">
+            <label for="jobDescription" class="iw-label">Job Description</label>
+            <textarea id="jobDescription" class="form-control  iw-input-field iw-input-required"
+                formControlName="jobDescription" placeholder="Enter job description"></textarea>
+            <div class="error"
+                *ngIf="jobForm.controls['jobDescription'].invalid && jobForm.controls['jobDescription'].touched">
+                Description must be at least 15 characters.
+            </div>
+        </div>
+
+        <!-- Attachments -->
+        <div class="iw-input-group">
+            <label for="attachments" class="iw-label">Attachments</label>
+            <input type="file" id="attachments" class="form-control iw-input-field" formControlName="attachments" />
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary" [disabled]="jobForm.invalid">Post Job</button>
+
+    </form>
+</section>
