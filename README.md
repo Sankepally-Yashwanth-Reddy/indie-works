@@ -1,59 +1,103 @@
-# Myapp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+```md
+# **IndieWorks**  
 
-## Development server
+IndieWorks is a **freelancer marketplace web application** built using **Angular**. It allows users to **post jobs, find freelancers, manage orders, handle payments, and collaborate** on projects.  
 
-To start a local development server, run:
+This project leverages:
+- **Angular Material** for UI components  
+- **Reactive Forms** for authentication and job posting  
+- **Bootstrap** for responsive design  
+- **Google Material Icons** for a modern look  
+- **Flexible dark/light themes**  
 
+---
+
+## **🚀 Features**
+- 🔐 **Authentication System**: Login, Register, Forgot Password with role selection (Freelancer, Client, or Both).  
+- 🎯 **Post & Find Jobs**: Clients can post jobs with detailed requirements, and freelancers can apply.  
+- 🛠 **Freelancer Profiles**: View detailed freelancer profiles with skills, ratings, and experience.  
+- 💼 **Order & Service Management**: Track active jobs and completed services.  
+- 💰 **Earnings & Wallet**: Manage payments, earnings, and withdrawals securely.  
+- ⭐ **Ratings & Reviews**: Clients and freelancers can rate each other after job completion.  
+- 📞 **Support System**: Contact support for help with disputes or platform-related queries.  
+- ⚙ **Settings & Customization**: Manage profile, notification settings, and theme preferences.  
+
+---
+
+## **📌 Installation & Setup**
+### **1️⃣ Clone the repository**
+```bash
+git clone https://github.com/Sankepally-Yashwanth-Reddy/indie-works.git
+cd indie-works
+```
+
+### **2️⃣ Install dependencies**
+```bash
+npm install
+```
+
+### **3️⃣ Start the development server**
 ```bash
 ng serve
 ```
+Now, open **`http://localhost:4200/`** in your browser to view the app.  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## **📂 Project Structure**
+```
+indie-works/
+│── src/
+│   ├── app/                 # Main application code
+│   │   ├── components/      # UI components
+│   │   ├── services/        # API services
+│   │   ├── modules/         # Angular modules
+│   │   ├── pages/           # Main pages (Dashboard, Profile, etc.)
+│   ├── assets/              # Static assets (images, icons, etc.)
+│   ├── environments/        # Environment-specific configurations
+│── angular.json             # Angular configuration
+│── package.json             # Dependencies and scripts
+│── README.md                # Project documentation
+```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
+## **🔧 Development**
+### **Code scaffolding**
+To generate a new component:
 ```bash
 ng generate component component-name
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+For a full list of available schematics:
 ```bash
 ng generate --help
 ```
 
-## Building
-
-To build the project run:
-
+### **Building for production**
 ```bash
-ng build
+ng build --configuration=production
 ```
+This will generate an optimized build inside the `dist/` folder.  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### **Running unit tests**
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### **Running end-to-end tests**
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## **🌟 Contributing**
+Feel free to contribute to IndieWorks by **creating pull requests** or **submitting issues**.  
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### **📢 Contact**
+For questions or support, reach out via GitHub Issues.  
+
+👉 **GitHub Repo**: [IndieWorks](https://github.com/Sankepally-Yashwanth-Reddy/indie-works)  
+
+Happy coding! 🚀
